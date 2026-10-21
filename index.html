@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>1on1 Tracker · Browns Socialhouse Lynn Valley</title>
+<meta name="description" content="The Lynn Valley management team's 1on1 tracker. Sign in with your email.">
+<style>
+/* Public welcome page: shown before sign-in (Cloudflare Access bypasses /welcome). Signed-in visitors are sent straight to the tracker. */
+:root{
+  --bg:#F6F5F3; --surface:#FFFFFF; --sunk:#EFEDEA; --fg:#231F20; --muted:#5B5957; --line:#E4E1DD;
+  --accent:#EE7622; --accent-soft:#FCE6D6; --accent-ink:#231F20; --accent-text:#B5520C;
+  --display:"Helvetica Neue",Helvetica,Arial,sans-serif; --body:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#1A1718; --surface:#262223; --sunk:#201C1D; --fg:#F6F5F3; --muted:#B5B1AD; --line:#3A3536;
+  --accent:#F58A3A; --accent-soft:#3D2717; --accent-ink:#231F20; --accent-text:#F58A3A; color-scheme:dark}}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--fg);font:16px/1.5 var(--body)}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:28px max(20px,env(safe-area-inset-right,0px)) 56px max(20px,env(safe-area-inset-left,0px))}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.wordmark{font-family:var(--display);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.wordmark b{color:var(--fg)}
+.signin-sm{font-weight:700;font-size:.9rem;color:var(--accent-text);text-decoration:underline;text-underline-offset:3px}
+
+.hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:center;margin-top:44px}
+@media (max-width:820px){.hero{grid-template-columns:minmax(0,1fr);gap:28px;margin-top:28px}}
+.eyebrow{font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-text)}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(2.4rem,6vw,3.6rem);line-height:1.02;letter-spacing:.01em;margin:10px 0 14px;text-wrap:balance}
+h1 span{color:var(--accent);text-transform:uppercase;letter-spacing:.05em}
+.lede{font-size:1.12rem;color:var(--muted);max-width:34em;margin:0}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-block;border-radius:10px;padding:13px 22px;font-weight:700;text-decoration:none;border:1px solid var(--line);background:var(--surface)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{border-color:var(--accent)}
+.newhere{margin:12px 0 0;font-size:.92rem;color:var(--muted);max-width:34em}
+.shot{margin:48px 0 0;display:grid;gap:10px}
+.shot img{width:100%;height:auto;max-width:100%;border-radius:14px;border:1px solid var(--line);box-shadow:0 18px 50px rgba(35,31,32,.18)}
+.shot figcaption{font-size:.86rem;color:var(--muted);text-align:center}
+.phone .card strong{color:var(--fg)}
+.status{margin-top:14px;font-size:.92rem;color:var(--muted);min-height:1.4em}
+
+/* sign-in steps, in the shape of the real flow */
+.steps{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;gap:16px}
+.steps h2{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0}
+.step{display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;align-items:start}
+.step i{font-style:normal;width:34px;height:34px;border-radius:50%;background:var(--accent-soft);color:var(--accent-text);font-weight:700;display:grid;place-items:center;font-variant-numeric:tabular-nums}
+.step strong{display:block}
+.step span{color:var(--muted);font-size:.92rem}
+
+h3.sec{font-family:var(--display);font-size:1.35rem;margin:56px 0 16px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:820px){.grid{grid-template-columns:minmax(0,1fr)}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:6px;align-content:start}
+.card .tag{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-text)}
+.card b{font-size:1.04rem}
+.card p{margin:0;color:var(--muted);font-size:.93rem}
+
+.privacy{margin-top:56px;background:var(--sunk);border-radius:16px;padding:26px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:24px}
+@media (max-width:820px){.privacy{grid-template-columns:minmax(0,1fr)}}
+.privacy h3{font-family:var(--display);font-size:1.35rem;margin:0}
+.privacy ul{margin:0;padding-left:18px;display:grid;gap:8px}
+.privacy li{color:var(--fg)}
+.privacy li span{color:var(--muted)}
+footer{margin-top:40px;color:var(--muted);font-size:.88rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="wordmark">Browns <b>Socialhouse</b> · Lynn Valley</div>
+    <a class="signin-sm" href="https://1on1-tracker.pages.dev/">Sign in</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">For the Lynn Valley management team</div>
+        <h1>1on1 <span>Tracker</span></h1>
+        <p class="lede">Never miss a 1on1. See who's due, what you promised, and how training's going.</p>
+        <div class="ctas">
+          <a class="btn primary" href="https://1on1-tracker.pages.dev/">Sign in</a>
+        </div>
+        <p class="newhere">New here? Sign in with your email and you'll be asked to request access. An admin approves it.</p>
+              </div>
+      <aside class="steps" aria-label="How signing in works">
+        <h2>How signing in works</h2>
+        <div class="step"><i>1</i><div><strong>Enter your email</strong><span>Use the email your manager has on file for you.</span></div></div>
+        <div class="step"><i>2</i><div><strong>Type the 6-digit code</strong><span>It arrives by email within a minute. No password to remember.</span></div></div>
+        <div class="step"><i>3</i><div><strong>You're in for a month</strong><span>That phone or computer stays signed in. Add it to your home screen for one-tap access.</span></div></div>
+      </aside>
+    </section>
+
+    <figure class="shot">
+      <img src="tracker.jpg" width="1400" height="1094" loading="lazy" alt="The This week screen: who to meet most urgent first, open promises and BigChip reminders, shown with a made-up example team">
+      <figcaption>The This week screen, shown with a made-up example team.</figcaption>
+    </figure>
+
+    <h3 class="sec">What's inside</h3>
+    <div class="grid">
+      <div class="card"><span class="tag">This week</span><b>Who to meet, most urgent first</b><p>Overdue and new hires up top, with the follow-ups from last time on each card.</p></div>
+      <div class="card"><span class="tag">Log 1on1</span><b>Notes, mood and promises</b><p>A private "Shared in confidence" box for anything they asked you to keep between you.</p></div>
+      <div class="card"><span class="tag">BigChip</span><b>One-click copy</b><p>A clean summary of the 1on1, ready to paste. Confidential notes are never included.</p></div>
+      <div class="card"><span class="tag">SMART Goals</span><b>Goals with a deadline</b><p>Check-ins, how you'll know it's done, and a growth pipeline for future leads.</p></div>
+      <div class="card"><span class="tag">Menu training</span><b>Rollout quiz results</b><p>Scores from the training site, with retake reminders for anyone who needs one.</p></div>
+      <div class="card"><span class="tag">Team views</span><b>Servers, hosts, line cooks</b><p>Filter your team by role, from FOH Management to the Prep Team.</p></div>
+    </div>
+
+    <h3 class="sec">Put it on your phone</h3>
+    <div class="grid phone">
+      <div class="card"><span class="tag">iPhone</span><b>Safari</b><p>Open the tracker and sign in. Tap the <strong>Share</strong> button, then <strong>Add to Home Screen</strong>.</p></div>
+      <div class="card"><span class="tag">Android</span><b>Chrome</b><p>Open the tracker and sign in. Tap the <strong>⋮</strong> menu, then <strong>Add to Home screen</strong>.</p></div>
+      <div class="card"><span class="tag">Tip</span><b>Stay signed in</b><p>Use a normal tab, not private or incognito. You'll only need a code once a month on that phone.</p></div>
+    </div>
+
+    <section class="privacy">
+      <h3>Your notes stay yours</h3>
+      <ul>
+        <li>Only you can read your 1on1 notes. <span>Not other managers, and not admins.</span></li>
+        <li>FOH and BOH managers each see their own team. <span>Nobody sees the other team's people.</span></li>
+        <li>Admins and regional managers see counts only. <span>How many 1on1s are happening, never what was said.</span></li>
+        <li>Access is approved by an admin. <span>Anyone else gets a request form, not your team's data.</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <span>Browns Socialhouse Lynn Valley</span>
+  </footer>
+</div>
+</body>
+</html>
