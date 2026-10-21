@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>1on1 Tracker · Browns Socialhouse Lynn Valley</title>
-<meta name="description" content="The Lynn Valley management team's 1on1 tracker. Sign in with your email.">
+<title>1on1 Tracker · Browns Socialhouse</title>
+<meta name="description" content="The 1on1 tracker for Browns Socialhouse management teams. Sign in with your email.">
 <style>
 /* Public welcome page: shown before sign-in (Cloudflare Access bypasses /welcome). Signed-in visitors are sent straight to the tracker. */
 :root{
@@ -26,6 +26,8 @@ a{color:inherit}
 .top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
 .wordmark{font-family:var(--display);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
 .wordmark b{color:var(--fg)}
+.locsel{display:grid;gap:6px;margin-top:26px;font-weight:700;font-size:.9rem;max-width:20em}
+.locsel select{font:inherit;font-weight:400;padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--fg)}
 .signin-sm{font-weight:700;font-size:.9rem;color:var(--accent-text);text-decoration:underline;text-underline-offset:3px}
 
 .hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:center;margin-top:44px}
@@ -34,7 +36,7 @@ a{color:inherit}
 h1{font-family:var(--display);font-weight:700;font-size:clamp(2.4rem,6vw,3.6rem);line-height:1.02;letter-spacing:.01em;margin:10px 0 14px;text-wrap:balance}
 h1 span{color:var(--accent);text-transform:uppercase;letter-spacing:.05em}
 .lede{font-size:1.12rem;color:var(--muted);max-width:34em;margin:0}
-.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
 .btn{display:inline-block;border-radius:10px;padding:13px 22px;font-weight:700;text-decoration:none;border:1px solid var(--line);background:var(--surface)}
 .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
 .btn:hover{border-color:var(--accent)}
@@ -73,18 +75,27 @@ footer{margin-top:40px;color:var(--muted);font-size:.88rem;display:flex;justify-
 <body>
 <div class="wrap">
   <header class="top">
-    <div class="wordmark">Browns <b>Socialhouse</b> · Lynn Valley</div>
-    <a class="signin-sm" href="https://1on1-tracker.pages.dev/">Sign in</a>
+    <div class="wordmark">Browns <b>Socialhouse</b></div>
+    <a class="signin-sm signin" href="https://1on1-tracker.pages.dev/">Sign in</a>
   </header>
 
   <main>
     <section class="hero">
       <div>
-        <div class="eyebrow">For the Lynn Valley management team</div>
+        <div class="eyebrow">For Browns Socialhouse management teams</div>
         <h1>1on1 <span>Tracker</span></h1>
         <p class="lede">Never miss a 1on1. See who's due, what you promised, and how training's going.</p>
+        <label class="locsel">Your location
+          <select id="loc">
+            <option value="lynn-valley">Lynn Valley</option>
+            <option value="lower-lonsdale">Lower Lonsdale</option>
+            <option value="queen-elizabeth">Queen Elizabeth</option>
+            <option value="kelowna">Kelowna</option>
+            <option value="red-deer">Red Deer</option>
+          </select>
+        </label>
         <div class="ctas">
-          <a class="btn primary" href="https://1on1-tracker.pages.dev/">Sign in</a>
+          <a class="btn primary signin" href="https://1on1-tracker.pages.dev/">Sign in</a>
         </div>
         <p class="newhere">New here? Ask an admin to add your email. Once they have, tap Sign in and use that email.</p>
               </div>
@@ -122,6 +133,7 @@ footer{margin-top:40px;color:var(--muted);font-size:.88rem;display:flex;justify-
       <h3>Your notes stay yours</h3>
       <ul>
         <li>Only you can read your 1on1 notes. <span>Not other managers, and not admins.</span></li>
+        <li>Each location is separate. <span>Managers only ever see their own location's people.</span></li>
         <li>FOH and BOH managers each see their own team. <span>Nobody sees the other team's people.</span></li>
         <li>Admins and regional managers see counts only. <span>How many 1on1s are happening, never what was said.</span></li>
         <li>Only people an admin adds can sign in. <span>Any other email never gets a login code.</span></li>
@@ -130,8 +142,9 @@ footer{margin-top:40px;color:var(--muted);font-size:.88rem;display:flex;justify-
   </main>
 
   <footer>
-    <span>Browns Socialhouse Lynn Valley</span>
+    <span>Browns Socialhouse</span>
   </footer>
 </div>
+<script src="location.js"></script>
 </body>
 </html>
